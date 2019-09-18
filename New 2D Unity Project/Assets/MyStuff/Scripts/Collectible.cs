@@ -14,4 +14,6 @@ public class Collectible : MonoBehaviour
         CollectibleManager.Instance.HandleCoinCollected(); 
         Destroy(gameObject);
     }
+
+    //This is a test
 }
