@@ -93,9 +93,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cab5d79ca5c91d40a1d4b35d97a523b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  isClockwise: 1
   pivot: {fileID: 2804559550586406132}
+  speed: 4
+  isClockwise: 1
 --- !u!1 &2804559550586406133
 GameObject:
   m_ObjectHideFlags: 0

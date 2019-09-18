@@ -1,12 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class HazardSpinner : MonoBehaviour
 {
+    public Transform pivot;
+
+    [Range(0, 15)]
     public float speed;
     public bool isClockwise;
-    public Transform pivot;
 
     private void Update()
     {
