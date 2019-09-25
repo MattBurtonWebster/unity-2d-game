@@ -4,11 +4,10 @@ public class HazardSpinner : MonoBehaviour
 {
     public Transform pivot;
 
-    [Range(0,10)]
+    [Range(0,15)]
     public float speed;
 
     public bool isClockwise;
-
     private void Update()
     {
         if (isClockwise)
