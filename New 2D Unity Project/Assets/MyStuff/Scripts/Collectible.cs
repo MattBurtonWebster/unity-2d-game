@@ -20,6 +20,6 @@ public class Collectible : MonoBehaviour
         _hasBeenCollected = true;
         CollectibleManager.Instance.HandleCoinCollected(); 
         Destroy(gameObject);
-        SoundManager.Instance.PlayCoinCollectSound();
+
     }
 }

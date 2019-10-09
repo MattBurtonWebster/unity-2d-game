@@ -6,7 +6,7 @@ public class CrateSpawner : MonoBehaviour
 {
     public GameObject cratePrefab;
 
-    [Range(0,10)]
+    [Range(0,100)]
     public int amountOfCratesToCreate;
 
     void Start()

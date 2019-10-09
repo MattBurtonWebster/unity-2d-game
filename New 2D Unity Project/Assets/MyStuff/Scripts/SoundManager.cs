@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityStandardAssets._2D;
 
 public class SoundManager : MonoBehaviour
 {
@@ -13,9 +12,15 @@ public class SoundManager : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
-
-        DontDestroyOnLoad(this.gameObject);
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     public void PlayCoinCollectSound()
@@ -24,4 +29,3 @@ public class SoundManager : MonoBehaviour
         audioSource.Play();
     }
 }
-
