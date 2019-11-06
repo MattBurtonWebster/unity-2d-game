@@ -15,11 +15,9 @@ public class Collectible : MonoBehaviour
         }
     }
 
-    void HandleCollected()
+    public virtual void HandleCollected()
     {
         _hasBeenCollected = true;
-        CollectibleManager.Instance.HandleCoinCollected(); 
         Destroy(gameObject);
-
     }
 }

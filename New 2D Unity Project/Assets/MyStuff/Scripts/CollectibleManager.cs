@@ -19,7 +19,7 @@ public class CollectibleManager : MonoBehaviour
 
     private void Start()
     {
-        _totalCoins = FindObjectsOfType<Collectible>().Length;
+        _totalCoins = FindObjectsOfType<Coin>().Length;
         DisplayCoinCount();
     }
 
