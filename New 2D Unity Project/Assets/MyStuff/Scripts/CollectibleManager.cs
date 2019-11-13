@@ -35,7 +35,7 @@ public class CollectibleManager : MonoBehaviour
 
         if (_collectedCoins >= _totalCoins)
         {
-            YouWinMenu.Instance.Show();
+            YouWinMenu.Instance.Show("BOOYAH");
         }
 
         SoundManager.Instance.PlayCoinCollectSound();

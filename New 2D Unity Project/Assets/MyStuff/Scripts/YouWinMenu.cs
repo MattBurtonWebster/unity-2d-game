@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
+using TMPro;
 
 public class YouWinMenu : MonoBehaviour
 {
@@ -10,6 +12,9 @@ public class YouWinMenu : MonoBehaviour
     public GameObject container;
     public Button nextLevelButton;
     public Button dismissButton;
+    public TextMeshProUGUI winMessage;
+
+    private float _animationSpeed = .25f;
 
     private void Awake()
     {
@@ -45,10 +50,30 @@ public class YouWinMenu : MonoBehaviour
     public void Show()
     {
         container.SetActive(true);
+        transform.localScale = Vector3.zero;
+        transform.DOScale(1, _animationSpeed).SetEase(Ease.OutBack);
+        StartCoroutine(ShowNextButton());
+    }
+
+    public void Show(string message)
+    {
+        container.SetActive(true);
+        transform.localScale = Vector3.zero;
+        transform.DOScale(1, _animationSpeed).SetEase(Ease.OutBack);
+        StartCoroutine(ShowNextButton());
+        winMessage.SetText(message);
     }
 
     public void Hide()
     {
         container.SetActive(false);
+    }
+
+    private IEnumerator ShowNextButton()
+    {
+        nextLevelButton.gameObject.SetActive(false);
+        yield return new WaitForSeconds(2);
+        nextLevelButton.gameObject.SetActive(true);
+        nextLevelButton.transform.DOShakeScale(_animationSpeed, 1, 10, 90, true);
     }
 }
